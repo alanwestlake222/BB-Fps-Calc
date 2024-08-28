@@ -1,0 +1,356 @@
+object Form1: TForm1
+  Left = 1265
+  Height = 317
+  Top = 273
+  Width = 485
+  BorderStyle = bsSingle
+  Caption = 'Energy/FPS calculator'
+  ClientHeight = 317
+  ClientWidth = 485
+  Menu = MainMenu1
+  Position = poDesktopCenter
+  LCLVersion = '3.4.0.0'
+  object Button1: TButton
+    Left = 208
+    Height = 40
+    Top = 88
+    Width = 73
+    Caption = 'Calculate'
+    TabOrder = 0
+    OnClick = Button1Click
+  end
+  object Button2: TButton
+    Left = 218
+    Height = 31
+    Top = 272
+    Width = 61
+    Caption = 'E&xit'
+    TabOrder = 1
+    OnClick = Button2Click
+  end
+  object time1: TEdit
+    Left = 52
+    Height = 31
+    Hint = 'Time BB fired'
+    Top = 40
+    Width = 48
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 2
+  end
+  object time2: TEdit
+    Left = 144
+    Height = 31
+    Hint = 'Time target hit'
+    Top = 40
+    Width = 48
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 3
+  end
+  object BBweight: TEdit
+    Left = 239
+    Height = 31
+    Hint = 'Weight of BB eg 0.2'
+    Top = 40
+    Width = 48
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 4
+    Text = '0.2'
+  end
+  object DistanceToMic: TEdit
+    Left = 340
+    Height = 31
+    Hint = 'distance from target to microphone. '#13#10'Assumes gun (and you) are next to microphone'
+    Top = 40
+    Width = 48
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 5
+    Text = '12'
+  end
+  object Label1: TLabel
+    Left = 48
+    Height = 19
+    Hint = 'Time BB fired'
+    Top = 24
+    Width = 59
+    Alignment = taCenter
+    Caption = 'Start time'
+    ParentShowHint = False
+    ShowHint = True
+  end
+  object Label2: TLabel
+    Left = 144
+    Height = 19
+    Hint = 'Time target hit'
+    Top = 24
+    Width = 53
+    Alignment = taCenter
+    Caption = 'End time'
+    ParentShowHint = False
+    ShowHint = True
+  end
+  object Label3: TLabel
+    Left = 232
+    Height = 19
+    Hint = 'Weight of BB eg 0.2'
+    Top = 24
+    Width = 61
+    Alignment = taCenter
+    Caption = 'BB Weight'
+    ParentShowHint = False
+    ShowHint = True
+  end
+  object Label4: TLabel
+    Left = 320
+    Height = 40
+    Hint = 'distance from target to microphone. '#13#10'Assumes gun (and you) are next to microphone'
+    Top = 0
+    Width = 88
+    Alignment = taCenter
+    AutoSize = False
+    Caption = '   Distance.'#13#10'Target to Mic'
+    ParentShowHint = False
+    ShowHint = True
+    WordWrap = True
+  end
+  object Label5: TLabel
+    Left = 102
+    Height = 19
+    Hint = 'Time BB fired'
+    Top = 40
+    Width = 26
+    Alignment = taCenter
+    Caption = 'Secs'
+    ParentShowHint = False
+    ShowHint = True
+  end
+  object Label6: TLabel
+    Left = 192
+    Height = 19
+    Hint = 'Time target hit'
+    Top = 40
+    Width = 26
+    Alignment = taCenter
+    Caption = 'Secs'
+    ParentShowHint = False
+    ShowHint = True
+  end
+  object Label7: TLabel
+    Left = 288
+    Height = 19
+    Hint = 'Weight of BB eg 0.2'
+    Top = 40
+    Width = 38
+    Alignment = taCenter
+    Caption = 'grams'
+    ParentShowHint = False
+    ShowHint = True
+  end
+  object travelTime: TEdit
+    Left = 62
+    Height = 31
+    Hint = 'Calculated travel time'
+    Top = 208
+    Width = 48
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clTeal
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    ParentShowHint = False
+    ReadOnly = True
+    ShowHint = True
+    TabOrder = 6
+    Text = '0'
+  end
+  object Label8: TLabel
+    Left = 56
+    Height = 19
+    Hint = 'Calculated travel time'
+    Top = 192
+    Width = 64
+    Alignment = taCenter
+    Caption = 'Travel time'
+    ParentShowHint = False
+    ShowHint = True
+  end
+  object Label9: TLabel
+    Left = 112
+    Height = 19
+    Hint = 'Calculated travel time'
+    Top = 208
+    Width = 26
+    Alignment = taCenter
+    Caption = 'Secs'
+    ParentShowHint = False
+    ShowHint = True
+  end
+  object velocityIMP: TEdit
+    Left = 167
+    Height = 31
+    Hint = 'feet per second'
+    Top = 208
+    Width = 48
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clGreen
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    ParentShowHint = False
+    ReadOnly = True
+    ShowHint = True
+    TabOrder = 7
+    Text = '0'
+  end
+  object Label10: TLabel
+    Left = 168
+    Height = 19
+    Hint = 'feet per second'
+    Top = 192
+    Width = 45
+    Alignment = taCenter
+    Caption = 'Velocity'
+    ParentShowHint = False
+    ShowHint = True
+  end
+  object Label11: TLabel
+    Left = 214
+    Height = 19
+    Hint = 'feet per second'
+    Top = 208
+    Width = 18
+    Alignment = taCenter
+    Caption = 'fps'
+    ParentShowHint = False
+    ShowHint = True
+  end
+  object Label12: TLabel
+    Left = 388
+    Height = 19
+    Hint = 'distance from target to microphone. '#13#10'Assumes gun (and you) are next to microphone'
+    Top = 40
+    Width = 23
+    Alignment = taCenter
+    Caption = 'feet'
+    ParentShowHint = False
+    ShowHint = True
+  end
+  object velocityMetric: TEdit
+    Left = 264
+    Height = 31
+    Hint = 'metres per second'
+    Top = 208
+    Width = 48
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clGreen
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    ParentShowHint = False
+    ReadOnly = True
+    ShowHint = True
+    TabOrder = 8
+    Text = '0'
+  end
+  object Label13: TLabel
+    Left = 266
+    Height = 19
+    Hint = 'metres per second'
+    Top = 192
+    Width = 45
+    Alignment = taCenter
+    Caption = 'Velocity'
+    ParentShowHint = False
+    ShowHint = True
+  end
+  object Label14: TLabel
+    Left = 312
+    Height = 19
+    Hint = 'metres per second'
+    Top = 208
+    Width = 23
+    Alignment = taCenter
+    Caption = 'm/s'
+    ParentShowHint = False
+    ShowHint = True
+  end
+  object shotEnergy: TEdit
+    Left = 368
+    Height = 31
+    Hint = 'Energy of BB'
+    Top = 208
+    Width = 48
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clRed
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    ParentShowHint = False
+    ReadOnly = True
+    ShowHint = True
+    TabOrder = 9
+    Text = '0'
+  end
+  object Label15: TLabel
+    Left = 370
+    Height = 19
+    Hint = 'Energy of BB'
+    Top = 192
+    Width = 41
+    Alignment = taCenter
+    Caption = 'Energy'
+    ParentShowHint = False
+    ShowHint = True
+  end
+  object Label16: TLabel
+    Left = 416
+    Height = 19
+    Hint = 'Energy of BB'
+    Top = 208
+    Width = 35
+    Alignment = taCenter
+    Caption = 'Joules'
+    ParentShowHint = False
+    ShowHint = True
+  end
+  object Label17: TLabel
+    Left = 176
+    Height = 30
+    Top = 152
+    Width = 160
+    Alignment = taCenter
+    Caption = 'Calculated Values'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -21
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    ParentShowHint = False
+    ShowHint = True
+  end
+  object MainMenu1: TMainMenu
+    Left = 384
+    Top = 264
+    object MenuItem1: TMenuItem
+      Caption = '&File'
+      object MenuItem3: TMenuItem
+        Caption = 'E&xit'
+        OnClick = MenuItem3Click
+      end
+    end
+    object MenuItem2: TMenuItem
+      Caption = '&Help'
+      object MenuItem5: TMenuItem
+        Caption = 'Instructions'
+        OnClick = MenuItem5Click
+      end
+      object MenuItem4: TMenuItem
+        Caption = '&About'
+        OnClick = MenuItem4Click
+      end
+    end
+  end
+end
